@@ -38,4 +38,5 @@ def packall():
 if __name__ == '__main__':
     packall()
     root.geometry("510x610")
+    root.re
     root.mainloop()
