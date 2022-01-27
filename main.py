@@ -142,11 +142,21 @@ def update_display(ele='', mod='W'):
         return 0
     # to add element
     elif mod == 'W':
-        DISPLAY.append(str(ele))    # add the element to the display array
-        chaine = ""
-        for i in DISPLAY:
-            chaine = chaine + i
-        textVarSee.set(chaine)
+        if ele == '.':
+            count = DISPLAY.count('+') + \
+                DISPLAY.count('-')+DISPLAY.count('*')+DISPLAY.count('/')
+            if DISPLAY.count('.') <= count:
+                DISPLAY.append(str(ele))
+                chaine = ""
+                for i in DISPLAY:
+                    chaine = chaine + i
+                textVarSee.set(chaine)
+        else:
+            DISPLAY.append(str(ele))    # add the element to the display array
+            chaine = ""
+            for i in DISPLAY:
+                chaine = chaine + i
+            textVarSee.set(chaine)
         return 0
     # to du the calculation
     elif mod == 'A':
